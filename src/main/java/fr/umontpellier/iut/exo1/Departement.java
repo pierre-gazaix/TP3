@@ -14,15 +14,21 @@ public class Departement {
     }
 
     public String toString() {
-        return "Departement{" +
-                "spécialité='" + spécialité + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", listeetud=" + listeetud +
-                '}';
+        String s = "";
+        s += "------------  [ " + this.spécialité + " - " + this.adresse + " ]  ------------ \n";
+        int x = this.listeetud.size();
+        for(int i = 0; i<x; i++){
+            s += i + "-" + this.listeetud.get(i).toString() + "\n";
+        }
+        return s;
     }
 
     public void inscrire(Etudiants etu, Departement dep){
         dep.listeetud.add(etu);
+    }
+
+    public void desinscrire(Etudiants etu, Departement dep){
+        dep.listeetud.remove(etu);
     }
 
 
