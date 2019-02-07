@@ -11,24 +11,24 @@ public class Departement {
     public Departement(String adresse, String spécialité) {
         this.adresse = adresse;
         this.spécialité = spécialité;
+        this.listeetud = new ArrayList<Etudiants>();
     }
 
     public String toString() {
         String s = "";
         s += "------------  [ " + this.spécialité + " - " + this.adresse + " ]  ------------ \n";
-        int x = this.listeetud.size();
-        for(int i = 0; i<x; i++){
-            s += i + "-" + this.listeetud.get(i).toString() + "\n";
+        for(int i = 0; i < this.listeetud.size(); i++){
+            s += i+1  + "-" + this.listeetud.get(i).toString() + "\n";
         }
         return s;
     }
 
-    public void inscrire(Etudiants etu, Departement dep){
-        dep.listeetud.add(etu);
+    public void inscrire(Etudiants etu){
+        this.listeetud.add(etu);
     }
 
-    public void desinscrire(Etudiants etu, Departement dep){
-        dep.listeetud.remove(etu);
+    public void desinscrire(Etudiants etu){
+        this.listeetud.remove(etu);
     }
 
 

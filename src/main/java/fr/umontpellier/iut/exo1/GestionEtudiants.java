@@ -11,9 +11,17 @@ public class GestionEtudiants {
         LocalDate dateNaissance = LocalDate.of(2000, Month.FEBRUARY, 27);
         Etudiants lolo = new Etudiants("Gazaix", "Pierre", dateNaissance, "gazaixpierre@gmail.com", "10 avenue d'Unterschleissheim");
         Etudiants toto = lolo;
+        Etudiants roro = new Etudiants("Roro", "Pierre", dateNaissance, "gazaixpierre@gmail.com", "10 avenue d'Unterschleissheim");
+        Etudiants momo = new Etudiants("Momo", "Pierre", dateNaissance, "gazaixpierre@gmail.com", "10 avenue d'Unterschleissheim");
+        Departement monDepInfo = new Departement("A l'IUT", "Informatique");
 
-        System.out.println(toto.toString());
-        System.out.println(lolo.toString());
+        monDepInfo.inscrire(lolo);
+        monDepInfo.inscrire(toto);
+        monDepInfo.inscrire(roro);
+        monDepInfo.inscrire(momo);
+        monDepInfo.desinscrire(toto);
+
+        System.out.println(monDepInfo.toString());
 
     }
 }
