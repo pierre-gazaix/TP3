@@ -24,10 +24,12 @@ public class Departement {
     }
 
     public void inscrire(Etudiants etu){
+
         this.listeetud.add(etu);
     }
 
     public void desinscrire(Etudiants etu){
+
         this.listeetud.remove(etu);
     }
 
